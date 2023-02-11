@@ -23,7 +23,7 @@ function playRound(playerSelection, computerSelection) {
             }
             else (computerSelection === "scissors"); {
                 plaPoint++;
-                return "Player wins! Rock beats scissors" 
+                return "Player wins! Rock beats scissors"
             }
         case "paper":
             if (computerSelection === playerSelection) {
@@ -61,7 +61,12 @@ function playRound(playerSelection, computerSelection) {
 }
 function game(playRound) {
     for (let i = 0; i < 5; i++) {
-        const playerSelection = prompt("Choose Rock, Paper or Scissors").toLowerCase()
+        const playerSelection = prompt("Choose Rock, Paper or Scissors")
+        if (typeof playerSelection === 'string') {
+            playerSelection = playerSelection.toLowerCase().trim();
+        } else {
+            console.log('You havent choosen correct input');
+        }
         const computerSelection = computerPlay();
         let winner = playRound(playerSelection, computerSelection)
         console.log(winner);
