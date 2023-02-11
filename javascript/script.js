@@ -1,3 +1,22 @@
+function playerPlay() {
+    const playerPly = prompt("Choose Rock, Paper or Scissors").toLowerCase().trim()
+    if (playerPly == 'rock') {
+        return "rock";
+    }
+    else if (playerPly == 'paper') {
+        return "paper";
+    }
+    else if (playerPly == 'scissors') {
+        return "scissors";
+    } else {
+        (playerPly !== "rock" && playerPly !== "paper" && playerPly !== "scissor");
+        console.log('You havent choosen correc input');
+        playerPlay()
+    }
+return
+}
+
+
 function computerPlay() {
     const computerPly = Math.floor(Math.random() * (3 - 1) + 1);
     if (computerPly == 1) {
@@ -23,7 +42,7 @@ function playRound(playerSelection, computerSelection) {
             }
             else (computerSelection === "scissors"); {
                 plaPoint++;
-                return "Player wins! Rock beats scissors" 
+                return "Player wins! Rock beats scissors"
             }
         case "paper":
             if (computerSelection === playerSelection) {
@@ -50,18 +69,15 @@ function playRound(playerSelection, computerSelection) {
                 plaPoint++;
                 return ("Player wins! Scissors beat paper");
             }
-        default:
-            (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissor");
-            console.log('You havent choosen correc input');
-            game(playRound)
-            return
+
     }
 
 
 }
 function game(playRound) {
     for (let i = 0; i < 5; i++) {
-        const playerSelection = prompt("Choose Rock, Paper or Scissors").toLowerCase().trim()
+        console.log("Round", i + 1, "starts")
+        const playerSelection = playerPlay();
         const computerSelection = computerPlay();
         let winner = playRound(playerSelection, computerSelection)
         console.log(winner);
@@ -69,10 +85,17 @@ function game(playRound) {
     if (cmpPoint > plaPoint) {
         console.log("Computer wins ", cmpPoint, ":", plaPoint)
         alert("Computer wins ", cmpPoint, ":", plaPoint)
+        return
     }
-    else {
+    else if (cmpPoint < plaPoint) {
         console.log("Player wins ", plaPoint, ":", cmpPoint)
         alert("Player wins ", plaPoint, ":", cmpPoint)
+        return
+    }
+    else {
+        console.log("It's a draw ", plaPoint, ":", cmpPoint)
+        alert("It's a draw ", plaPoint, ":", cmpPoint)
+        return
     }
 }
 
