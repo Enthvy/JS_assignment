@@ -53,7 +53,7 @@ function playRound(playerSelection, computerSelection) {
         default:
             (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissor");
             console.log('You havent choosen correc input');
-            playRound(playerSelection,)
+            game(playRound)
             return
     }
 
