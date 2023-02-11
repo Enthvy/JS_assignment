@@ -15,9 +15,9 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection, result) {
-    switch (this.playerSelection) {
+    switch (playerSelection) {
         case "rock":
-            if (computerSelection === this.playerSelection) {
+            if (computerSelection === playerSelection) {
                 
                 return result = "Player tied rock";
             }
@@ -32,7 +32,7 @@ function playRound(playerSelection, computerSelection, result) {
                 return result = "Player wins! Rock beats scissors";
             }
         case "paper":
-            if (computerSelection === this.playerSelection) {
+            if (computerSelection === playerSelection) {
                 
                 return result = "Player tied paper";
             }
@@ -48,7 +48,7 @@ function playRound(playerSelection, computerSelection, result) {
             }
         case "scissors":
             playerSelection = "scissors";
-            if (computerSelection === this.playerSelection) {
+            if (computerSelection === playerSelection) {
                 
                 return result = "Player tied scissors";
             }
@@ -63,7 +63,7 @@ function playRound(playerSelection, computerSelection, result) {
                 return result = "Player wins! Scissors beat paper";
             }
         default:
-            (this.playerSelection !== "rock" && this.playerSelection !== "paper" && this.playerSelection !== "scissor");
+            (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissor");
             result = 'You havent choosen correc input';
     }
 
@@ -75,13 +75,16 @@ function game(playRound) {
         const computerSelection = computerTextElement;
         let result
         let winner = playRound(playerSelection, computerSelection, result)
-        return winner;
+        return ;
     }
     if (cmpPoint > plaPoint) {
         console.log("Computer wins ", cmpPoint, ":", plaPoint)
+        return winner = "Computer wins ", cmpPoint, ":", plaPoint
     }
     else {
         console.log("Player wins ", plaPoint, ":", cmpPoint)
+        return winner ="Player wins ", plaPoint, ":", cmpPoint
+        
     }
 }
 
@@ -104,5 +107,5 @@ choiceButtons.forEach(button => button.addEventListener("click", () => {
     computerPlay()
     computerTextElement.textContent = `Computer: ${computerSelection}`;
     playRound()
-    resultTextElement.textContent = `Result: ${this.result}`;
+    resultTextElement.textContent = `Result: ${result}`;
 }));
