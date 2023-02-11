@@ -1,21 +1,18 @@
 function playerPlay() {
     const playerPly = prompt("Choose Rock, Paper or Scissors").toLowerCase().trim()
-    if (playerPly == 'rock') {
+    if (playerPly == "rock") {
         return "rock";
     }
-    else if (playerPly == 'paper') {
+    else if (playerPly == "paper") {
         return "paper";
     }
-    else if (playerPly == 'scissors') {
+    else if (playerPly == "scissors") {
         return "scissors";
-    } else {
-        (playerPly !== "rock" && playerPly !== "paper" && playerPly !== "scissor");
-        console.log('You havent choosen correc input');
-        playerPlay()
-    }
-return
-}
+    } else (playerPly !== "rock" && playerPly !== "paper" && playerPly !== "scissor");
+    console.log('You havent choosen correc input');
+    return
 
+}
 
 function computerPlay() {
     const computerPly = Math.floor(Math.random() * (3 - 1) + 1);
@@ -69,11 +66,10 @@ function playRound(playerSelection, computerSelection) {
                 plaPoint++;
                 return ("Player wins! Scissors beat paper");
             }
-
     }
-
-
 }
+
+
 function game(playRound) {
     for (let i = 0; i < 5; i++) {
         console.log("Round", i + 1, "starts")
