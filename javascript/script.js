@@ -10,6 +10,7 @@ function playerPlay() {
         return "scissors";
     } else (playerPly !== "rock" && playerPly !== "paper" && playerPly !== "scissor");
     console.log('You havent choosen correc input');
+    playerPlay()
     return
 
 }
